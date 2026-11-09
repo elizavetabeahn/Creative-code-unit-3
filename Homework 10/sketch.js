@@ -9,10 +9,25 @@ function setup() {
 function draw() {
   background("#39AFF9");
 
-  //color for custom shape
+  //make the fire tower shape
   strokeWeight(1)
+  stroke(0)
+  fill(149, 154, 156)
+  rect(55, 55, 75, 50)
+  triangle(55, 55, 90, 33, 130, 55)
+  //make the legs of the tower
+  strokeWeight(7)
+  stroke(149, 154, 156)
+  line(70, 100, 60, 200)
+  line(110, 100, 120, 200)
+  line(70, 100, 112, 125)
+  line(112, 125, 67, 143)
+  line(67, 143, 113, 160)
+  //color for custom shape mountain
+  strokeWeight(1)
+  stroke(0)
   fill(239, 247, 251)
-  //custom shape
+  //custom shape, mountain
   beginShape();
   //vertices inside shape
   vertex(0, 200);
@@ -48,9 +63,42 @@ function draw() {
   vertex(10, 200);
   endShape(CLOSE);
 
+  //window of fire tower
+  fill("#39AFF9")
+  rect(60, 60, 65, 20)
+
+  //skiier mouse follower shape construction
+  strokeWeight(5)
+  line(mouseX-10, mouseY-40, mouseX-50, mouseY-20)
+  strokeWeight(10)
+  stroke(29, 37, 41)
+  line(mouseX+30, mouseY, mouseX-30, mouseY+40)
+  line(mouseX+30, mouseY+20, mouseX-30, mouseY+60)
+  line(mouseX-5, mouseY-30, mouseX-10, mouseY+20)
+  line(mouseX, mouseY-30, mouseX, mouseY+40)
+  strokeWeight(1)
+  stroke(0)
+  fill(222, 60, 75)
+  ellipse(mouseX-5, mouseY-30, 50, 60)
+  fill(227, 183, 118)
+  ellipse(mouseX-10, mouseY-50, 40, 40)
+  fill(222, 60, 75)
+  triangle(mouseX-20, mouseY-70, mouseX, mouseY-80, mouseX+10, mouseY-60)
+  strokeWeight(7)
+  point(mouseX-20, mouseY-50)
+  point(mouseX-5, mouseY-50)
+  strokeWeight(5)
+  line(mouseX, mouseY-30, mouseX-20, mouseY-10)
+  stroke(105, 35, 107)
+  line(mouseX-50, mouseY-40, mouseX-50, mouseY+20)
+  line(mouseX-20, mouseY-20, mouseX-20, mouseY+40)
+
+
 //begin cloud animation section
     //cloud circle in back
-    fill(255);
+    strokeWeight(1)
+    stroke(0)
+    fill(157, 198, 209);
     ellipse(xa, 100 / 2, 200, 40);
 
     // Increase the x variable by 2(speed of it moving)
@@ -61,7 +109,7 @@ function draw() {
       xa = -25;
     }
     //cloud circle in front 
-    fill(255);
+    fill(157, 198, 209);
       ellipse(x, 100 / 2, 100, 50);
 
       // Increase the x variable by 2(speed of it moving)
@@ -74,10 +122,11 @@ function draw() {
       //end the cloud animation section
 
   //bottom extra stuff
-  textSize(50)
-  text("🪲", mouseX, mouseY)
-  fill(0)
-  textSize(10)
-  text("X: " + round(mouseX) + " Y: " + round(mouseY), mouseX, mouseY +30);
+  //strokeWeight(1)
+  //textSize(50)
+  //text(mouseX, mouseY)
+  //fill(255)
+  //textSize(10)
+  //text("X: " + round(mouseX) + " Y: " + round(mouseY), mouseX, mouseY +30);
 
 }
